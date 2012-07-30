@@ -1,6 +1,15 @@
-Hello World!
-
-
+Categorias:
 <% for categoria in @categorias %>
-<h2><%= categoria.nome_categoria %></h2>
+	<h2>
+		<%= categoria.nome_categoria %>
+	</h2>
+
+	<h2>
+		<%= link_to categoria.nome_categoria, :action=>'show', :id=>categoria.id%>
+	</h2>
+
+	<br />
+	<p>
+		<%= link_to 'Cadastrar nova Categoria', :action=>'new' %>
+	</p>
 <% end %>

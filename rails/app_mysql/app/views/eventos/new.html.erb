@@ -1,0 +1,10 @@
+<h1>Cadastrar novo evento</h1>
+<% form_for(@categoria) do |f| %>
+
+	<h4>Titulo</h4>
+    <%= f.text_field :nome_categoria %>
+
+    <br />
+  	<%= f.submit "Cadastrar" %>
+  
+<% end %>

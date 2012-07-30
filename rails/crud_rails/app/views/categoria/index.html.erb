@@ -1,0 +1,13 @@
+Categorias:
+
+<% for categoria in @categorias %>
+	<h2>
+		<%= link_to categoria.titulo, :action=>'show', :id=>categoria.id%>
+	</h2>
+<% end %>
+
+<br/>
+
+<ul>
+	<li><%= link_to 'Cadastrar nova Categoria', :action=>'new' %></li>
+</ul>

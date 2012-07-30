@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CrudRails</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div id="principal">
+  <% unless flash[:aviso].blank? %>
+      <div id="aviso"><%= flash[:aviso] %></div>
+  <% end %>
+  <%= yield %>
+</div>
+
+</body>
+</html>

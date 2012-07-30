@@ -1,0 +1,20 @@
+Categoria:
+
+<h2><%= @categoria.titulo %></h2>
+<br />
+<h3>Descrição</h3>
+<p>
+<%= @categoria.descricao %>
+</p>
+<br />
+
+<p>
+<%= link_to 'Editar', :action=>'edit', :id=>@categoria.id%>
+</p>
+
+</p>
+<p>
+
+
+<%= link_to "Excluir", { :action => "destroy", :id => @categoria.id  },
+          :confirm => "Are you sure?", :method => :delete %></p>
