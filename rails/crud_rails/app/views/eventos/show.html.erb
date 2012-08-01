@@ -1,0 +1,27 @@
+Evento:
+
+<h2><%= @evento.titulo %></h2>
+<br />
+<h3>Descrição</h3>
+<p>
+<%= @evento.descricao %>
+</p>
+<br />
+
+<h4>Data do evento: <%= @evento.data.strftime("%d/%m/%Y") %></h4>
+
+<h4>Categoria</h4>
+ <%= @evento.categoria.titulo %>
+ <br/>
+
+
+<p>
+<%= link_to 'Editar', :action=>'edit', :id=>@evento.id%>
+</p>
+
+</p>
+<p>
+
+
+<%= link_to "Excluir", { :action => "destroy", :id => @evento.id  },
+          :confirm => "Are you sure?", :method => :delete %></p>

@@ -1,0 +1,21 @@
+Cadastrar Evento:
+
+  <%= form_for @evento, :url => { :action => "update", :id =>  @evento.id  }, :html => {:class => "nifty_form"} do |f| %>
+  
+   <h4>Título</h4>
+   <%= f.text_field :titulo %> <br/>
+  
+   <h4>Descrição</h4>
+   <%= f.text_field :descricao %> <br/>
+
+
+ <h4>Categoria</h4>
+ <%= f.select :categoria_id, Categoria.find(:all).collect { |item| [item.titulo,item.id] } %>
+ <br/>
+
+ <h4>Data</h4>
+  <%= f.date_select(:data, :order => [:day, :month, :year]) %>
+  <br />
+
+  <%= f.submit "Update" %>
+<% end %>

@@ -1,13 +1,34 @@
 Categorias:
 
 <% for categoria in @categorias %>
-	<h2>
-		<%= link_to categoria.titulo, :action=>'show', :id=>categoria.id%>
-	</h2>
+	<ul>
+		<li>
+			<h2>
+				<%= link_to categoria.titulo, :action=>'show', :id=>categoria.id%>
+			</h2>
+			<h3>Eventos:</h3>
+			<ul>
+				<% for evento in categoria.eventos %>
+				<li>
+					<%= 
+						link_to evento.titulo, 
+						:controller => "eventos", 
+						:action => "show", 
+						:id=>evento.id %>
+				</li>
+				<% end %>
+			</ul>
+		</li>
+	</ul>
 <% end %>
 
 <br/>
 
 <ul>
-	<li><%= link_to 'Cadastrar nova Categoria', :action=>'new' %></li>
+	<li>
+		<%= link_to 'Cadastrar nova Categoria', :action=>'new' %>
+	</li>
+	<li>
+		<%=link_to "Cadastrar novo Evento", :controller => "eventos", :action => "new" %>
+	</li>
 </ul>

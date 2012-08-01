@@ -1,6 +1,7 @@
 Cadastrar categoria:
 
   <%= form_for @categoria, :url => { :action => "update", :id =>  @categoria.id }, :html => {:class => "nifty_form"} do |f| %>
-  <%= f.text_field :titulo %>
+  <%= f.text_field :titulo %> <br/>
+  <%= f.text_field :descricao %> <br/>
   <%= f.submit "Update" %>
 <% end %>
